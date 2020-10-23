@@ -18,13 +18,13 @@ def main():
 
     choice = st.sidebar.selectbox(
         "Choose what to do",
-        ["Information about the Project", "DEMO", "Show me the code", "About"],
+        ["Information", "Demo", "Code", "About"],
     )
-    if choice == "Information about the Project":
+    if choice == "Information":
         st.markdown(get_file_content_as_string("information.md"))
-    elif choice == "Show the source code":
-        st.code(get_file_content_as_string("building_extraction.py"))
-    elif choice == "DEMO":
+    elif choice == "Code":
+        st.code(get_file_content_as_string("src/building_extraction.py"))
+    elif choice == "Demo":
         run_the_app()
     elif choice == "About":
         st.markdown(get_file_content_as_string("about.md"))
