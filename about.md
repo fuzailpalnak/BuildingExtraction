@@ -1,6 +1,6 @@
 # About Me
 
-<img align="left" width="50%" src="https://user-images.githubusercontent.com/24665570/97026694-5cf84c80-1577-11eb-932d-f4913efd4fe9.jpg"> 
+<img align="left" width="30%" src="https://user-images.githubusercontent.com/24665570/97026694-5cf84c80-1577-11eb-932d-f4913efd4fe9.jpg"> 
 
 I am a Software Engineer and Machine Learning Enthusiast. In a quest, to find ways to improve my Machine Learning and Computer
 Vision Skills
