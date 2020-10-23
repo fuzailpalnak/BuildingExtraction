@@ -28,7 +28,7 @@ def icon_profile(icon_name, text):
 
 def main():
     # Render the readme as markdown using st.markdown.
-    readme_text = st.markdown(get_file_content_as_string("information.md"))
+    readme_text = st.markdown(get_file_content_as_string("../information.md"))
     remote(
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     )
@@ -42,7 +42,7 @@ def main():
 
     choice = st.sidebar.selectbox(
         "Choose what to do",
-        ["Information about the Project", "DEMO", "Show the source code", "About"],
+        ["Information about the Project", "DEMO", "Show me the code", "About"],
     )
     if choice == "Information about the Project":
         pass

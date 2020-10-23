@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run building_extraction.py
+web: sh setup.sh && streamlit run src/building_extraction.py
