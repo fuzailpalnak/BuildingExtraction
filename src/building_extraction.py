@@ -3,36 +3,12 @@ import numpy as np
 import streamlit as st
 import cv2
 from PIL import Image
-
-
-def remote(url):
-    st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)
-
-
-def icon_brand(icon_name, link):
-
-    st.markdown(
-        '<i class="fa fa-{}" style="font-size:24px"></i> : <a href="{}">{}</a>'.format(
-            icon_name, link, link
-        ),
-        unsafe_allow_html=True,
-    )
-
-
-def icon_profile(icon_name, text):
-    st.markdown(
-        '<i class="fa fa-{}" style="font-size:24px"></i> : {}'.format(icon_name, text),
-        unsafe_allow_html=True,
-    )
+import os
 
 
 def main():
     # Render the readme as markdown using st.markdown.
-    readme_text = st.markdown(get_file_content_as_string("../information.md"))
-    remote(
-        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    )
-    remote("https://fonts.googleapis.com/icon?family=Material+Icons")
+    # readme_text = st.markdown(get_file_content_as_string("information.md"))
     # Download external dependencies.
     # for filename in EXTERNAL_DEPENDENCIES.keys():
     #     download_file(filename)
@@ -45,20 +21,13 @@ def main():
         ["Information about the Project", "DEMO", "Show me the code", "About"],
     )
     if choice == "Information about the Project":
-        pass
+        st.markdown(get_file_content_as_string("information.md"))
     elif choice == "Show the source code":
-        readme_text.empty()
         st.code(get_file_content_as_string("building_extraction.py"))
     elif choice == "DEMO":
-        readme_text.empty()
         run_the_app()
     elif choice == "About":
-        readme_text.empty()
-        st.header("About")
-        icon_profile("user-circle-o", "Fuzail Palnak")
-        icon_profile("envelope", "fuzailpalnak@gmail.com")
-        icon_brand("github", "https://github.com/fuzailpalnak")
-        icon_brand("linkedin", "https://www.linkedin.com/in/fuzail-palnak-b4962994/")
+        st.markdown(get_file_content_as_string("about.md"))
 
 
 # This is the main app app itself, which appears when the user selects "Run the app".
@@ -125,10 +94,10 @@ def predict(image):
 # Download a single file and make its content available as a string.
 @st.cache(show_spinner=True)
 def get_file_content_as_string(path):
-    url = (
-        "https://raw.githubusercontent.com/fuzailpalnak/BuildingExtraction/master/"
-        + path
-    )
+    master = "https://raw.githubusercontent.com/fuzailpalnak/BuildingExtraction/master/"
+    branch = "https://raw.githubusercontent.com/fuzailpalnak/BuildingExtraction/extraction/modelv1/"
+    url = os.path.join(branch, path)
+
     response = urllib.request.urlopen(url)
     return response.read().decode("utf-8")
 
