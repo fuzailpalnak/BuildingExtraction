@@ -39,7 +39,7 @@ def main():
 
     choice = st.sidebar.selectbox(
         "Choose what to do",
-        ["Information", "Demo", "About"],
+        ["Demo", "About"],
     )
     if choice == "Demo":
         extract()
