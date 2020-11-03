@@ -49,7 +49,7 @@ def main():
 
 def extract():
     st.title("Building Extraction")
-    uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "tif", "tiff"])
 
     if uploaded_file is not None:
         st.header("Image")
