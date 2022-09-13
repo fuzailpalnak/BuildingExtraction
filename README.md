@@ -1,5 +1,5 @@
 # Building Extraction Demo
 
-https://building-extraction-demo.herokuapp.com/
+https://fuzailpalnak-buildingextraction-appbuilding-extraction-s-ov1rp9.streamlitapp.com/
 
 Demo app for https://github.com/fuzailpalnak/building-footprint-segmentation
